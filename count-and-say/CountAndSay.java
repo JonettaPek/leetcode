@@ -4,16 +4,22 @@
  *     split it into the minimal number of substrings such that each substring contains exactly one unique digit. 
  *     Then for each substring, say the number of digits, then say the digit. 
  *     Finally, concatenate every said digit.
+ * 
+ *          countAndSay(1) -> '1'
+ *          countAndSay(2) -> '11'
+ *          countAndSay(3) -> '21'
+ *          countAndSay(4) -> '1211'
+ *          countAndSay(5) -> '111221'
+ *          countAndSay(6) -> '312211'
+ *          countAndSay(7) -> '13112221'
  */
 
-class countAndSay {
+class CountAndSay {
 
-    public String countAndSay(int n) {
+    static String countAndSay(int n) {
         if (n == 1) {
             return "1";
-        }
-
-        if (n == 2) {
+        } else if (n == 2) {
             return "11";
         }
 
@@ -33,5 +39,16 @@ class countAndSay {
             returnString =  temp.append(occurrence).append(previousCharacter).toString();
         }
         return returnString;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(countAndSay(1));
+        System.out.println(countAndSay(2));
+        System.out.println(countAndSay(3));
+        System.out.println(countAndSay(4));
+        System.out.println(countAndSay(5));
+        System.out.println(countAndSay(6));
+        System.out.println(countAndSay(7));
+        System.out.println(countAndSay(8));
     }
 }
